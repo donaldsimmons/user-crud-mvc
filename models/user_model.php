@@ -12,7 +12,7 @@
 		
 			$statement = $this->db->prepare("
 			
-				SELECT user_id AS id, user_name AS username, user_full_name AS full_name
+				SELECT user_id AS id
 				FROM users
 				WHERE (user_name = :name) AND 
 						(user_pass = MD5(CONCAT(user_salt,:pass)))
@@ -21,20 +21,52 @@
 		
 			if($statement->execute(array(":name"=>$username,":pass"=>$password))) {
 			
-				$rows = $statement->fetchAll(\PDO::FETCH_ASSOC);
+				$user = $statement->fetch(\PDO::FETCH_ASSOC);
 				
-				if(count($rows) === 1) {
+				if(count($user) === 1) {
 				
-					return $rows[0];
+					return $user;
 				
 				}else{
 				
-					echo 'trouble with query request';
+					return false;
 				
 				}
 			
 			}
 		
 		}// end GetUserByPassword Function
+		
+		public function getUserInfo($user_id) {
+		
+			$statement = $this->db->prepare("
+			
+				SELECT user_name AS username, user_full_name AS full_name, 
+						user_height AS height, user_weight AS weight, 
+						user_target_weight AS target_weight
+				FROM users
+				WHERE (user_id = :id)
+			
+			");
+			
+			if($statement->execute(array(":id" => $user_id ))) {
+			
+				$user_info = $statement->fetch(\PDO::FETCH_ASSOC);
+				
+				if(count($user_info) !== 0) {
+				
+					$user_info["id"] = $user_id;
+					
+					return $user_info;
+				
+				}else{
+				
+					return false;
+				
+				}
+				
+			}
+		
+		}// end GetUserFunction
 	
 	}// end UserModel Class
