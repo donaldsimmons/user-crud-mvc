@@ -10,7 +10,7 @@
 </div> <!-- End LogIn Form Div-->
 <div id="signup_form">
     <h3>Sign-Up Today!</h3>
-    <form action="index.php/user/signup" method="post" class="content">
+    <form action="<?php echo BASE_URL.BASE_PATH."/index.php/user/signup"; ?>" method="post" class="content">
         <label for="first_name">First Name:</label>
             <input type="text" name="first_name" id="first_name" maxlength="20" size="20" /><br />
         <label for="last_name">Last Name:</label>
