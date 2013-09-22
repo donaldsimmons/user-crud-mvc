@@ -1,14 +1,19 @@
 <?php
-   //  $full_name = $_SESSION['userInfo']['fullName'];
-//     $username = $_SESSION['userInfo']['name'];
-//     $height = $_SESSION['userStats']['height'];
-//     $weight = $_SESSION['userStats']['weight'];
-//     $target_weight = $_SESSION['userStats']['targetWeight'];
+    
+    $full_name = $view_data['full_name'];
+    $first_name = $view_data['first_name'];
+    $last_name = $view_data['last_name'];
+        
+    $username = $view_data['username'];
+    $height = $view_data['height'];
+    $weight = $view_data['weight'];
+    $target_weight = $view_data['target_weight'];
+	
 ?>
 
 <h3>Your Profile</h3>
 
-<p class="content">Welcome back, <?php echo htmlentities($fullName); ?>!</p>
+<p class="content">Welcome back, <?php echo htmlentities($full_name); ?>!</p>
 
 <ul id="stat_list">
     <li><b>Username:</b> <?php echo htmlentities($username) ?></li><br />
