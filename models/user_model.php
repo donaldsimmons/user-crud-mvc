@@ -57,6 +57,28 @@
 				
 					$user_info["id"] = $user_id;
 					
+					$full_name_segments = explode(" ",$user_info["full_name"]);
+					
+					if(count($full_name_segments) == 3) {
+					
+						$first_name = $full_name_segments[0]." ".$full_name_segments[1];
+						
+						$last_name = $full_name_segments[2];
+						
+						$user_info["first_name"] = $first_name;
+						$user_info["last_name"] = $last_name;
+					
+					}else{
+					
+						$first_name = $full_name_segments[0];
+						
+						$last_name = $full_name_segments[1];
+					
+						$user_info["first_name"] = $first_name;
+						$user_info["last_name"] = $last_name;
+						
+					}
+					
 					return $user_info;
 				
 				}else{
