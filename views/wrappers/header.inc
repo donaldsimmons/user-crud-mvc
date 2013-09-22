@@ -2,7 +2,7 @@
 <html>
     <head>
         <title><?php echo $page_title; ?></title>
-        <link href="/css/main.css" type="text/css" rel="stylesheet" />
+        <link href="<?php echo BASE_URL.BASE_PATH."/assets/css/main.css"; ?>" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <div id="container">
