@@ -11,6 +11,7 @@
 
 	define("APP_NAME","User CRUD");
 	define("BASE_PATH",basename(__DIR__));
+	define("BASE_URL","http://localhost:8888/");
 	
 	$loader = new Loader($_GET,$_POST);
 	
