@@ -35,4 +35,4 @@
     </form>
 </div>
 
-<p id="back_link"><a href="<?php echo BASE_URL.BASE_PATH."/index.php"; ?>"><< Log Out</a></p>
+<p id="back_link"><a href="<?php echo BASE_URL.BASE_PATH."/index.php/user/signout"; ?>"><< Log Out</a></p>
