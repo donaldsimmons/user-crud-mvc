@@ -9,6 +9,8 @@
 			parent::__construct($action,$url_values,$post_values);
 			
 			$this->model = new UserModel(MY_DSN,MY_USER,MY_PASS);
+			
+			session_start();
 		
 		}// end __Construct Function
 		
@@ -25,11 +27,19 @@
 			
 			if($this->model->validateUsername($username) && $this->model->validatePassword($password)) {
 				
-				$rows = $this->model->getUserByPassword($username,$password);
+				$user = $this->model->getUserByPassword($username,$password);
 				
-				//header("Location: index.php/user/profile");
-				//var_dump($_GET);
-				$this->profile($rows);
+				if($user !== false) {
+				
+					$_SESSION["id"] = $user["id"];
+				
+					header("Location: ".BASE_URL.BASE_PATH."/index.php/user/profile/".$user["id"]);
+				
+				}else{
+				
+					echo 'trouble logging in';
+					
+				}
 				
 			}
 			
@@ -37,11 +47,21 @@
 		
 		}// end SignIn Function 
 		
-		public function profile($data) {
-		
-			var_dump($_GET);
-		
-			$this->renderView("profile","Profile",$data);
+		public function profile() {
+			
+			if(isset($_SESSION["id"])) {
+			
+				$id = $_SESSION["id"];
+				
+				$this->model->getUserInfo($id);
+			
+				$this->renderView("profile","Profile");
+			
+			}else{
+			
+				echo 'must be logged in';
+			
+			}
 		
 		}// end Profile Function
 		
@@ -56,5 +76,14 @@
 			header("Location: index.php/user/profile");
 		
 		}// end RegisterUser Function
+		
+		public function signout() {
+		
+			
+			session_destroy();
+			
+			header("Location: ".BASE_URL.BASE_PATH."/index.php");
+		
+		}// end SignOut Function
 			
 	}// end UserController Class
