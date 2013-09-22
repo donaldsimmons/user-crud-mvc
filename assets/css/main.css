@@ -1,0 +1,172 @@
+body {
+    background-color: #247696;
+    font-family: 'Arial',sans-serif;
+    color: #353535;
+}
+
+h1, h2, h3, h4 {
+    color: #353535;
+}
+
+h2 {
+    margin-left: 40px;
+}
+
+h3 {
+    margin-bottom: 5px;
+    margin-left: 25px;
+}
+
+li {
+    list-style: none;
+    margin-left: 45px;
+}
+
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #353535;
+}
+a:visited {
+    color: #353535;
+}
+a:hover {
+    color: #999999;
+}
+
+#page_head {
+    text-align: center;
+    border-bottom: 2px solid #949494;
+    padding-bottom: 25px;
+}
+
+#login_form {
+    border: 2px solid #949494;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    width: 300px;
+    float: left;
+    margin-left: 12px;
+    margin-bottom: 25px;
+}
+
+#login_form h3 {
+    padding-bottom: 10px;
+}
+
+#signup_form {
+    border: 2px solid  #949494;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    width: 300px;
+    float: left;
+    margin-left: 17px;
+    margin-bottom: 25px;
+    background-color: #69CC60;
+}
+
+#signup_form h3 {
+    padding-bottom: 10px;
+}
+
+#signup_form label,input {
+    margin-top: 2px;
+}
+
+#full_signup_form{
+    border: 2px solid  #555555;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    background-color: #919191;
+    width: 300px;
+    padding: 10px 5px 10px;
+}
+
+#stat_list {
+    width: 300px;
+    float: left;
+}
+
+#edit_profile_form {
+    width: 320px;
+    padding-right: 10px;
+    margin: -55px -22px 25px;
+    float: left;
+}
+
+#edit_profile_form form {
+    padding-left: 10px;
+    padding-top: 10px;
+    border: 2px solid  #555555;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    background-color: #919191;
+    width: 275px;
+}
+
+#edit_profile_form label {
+    font-weight: bold;
+    padding-right: 10px;
+    color: #353535;
+}
+
+#submit_btn {
+    margin: 10px -35px 10px;
+}
+
+#home_signup_btn {
+    margin: 10px -35px 10px;  
+}
+
+#signup_btn {
+    margin: 35px 0px -30px;
+}
+
+#edit_profile_btn {
+    margin-top: 35px;
+}
+
+#delete_user_btn {
+    clear: right;
+    margin-left: 95px;
+    margin-bottom: 8px;
+}
+
+#container {
+    background-color: #E8E8E8;
+    border: 4px solid #454545;
+    width: 650px;
+    margin: 0 auto;
+}
+
+.content {
+    margin-left: 50px;
+}
+
+
+#back_link {
+    font-size: .9em;
+    margin: 40px 10px -20px;
+}
+
+#delete_user_link {
+    font-size: .9em;
+}
+
+footer {
+    clear: both;
+}
+
+#footer_list {
+    margin-top: 25px;
+    padding-top: 20px; 
+    border-top: 2px solid #949494;
+}
+
+#footer_list li {
+    display: inline;
+    margin-left: 70px;
+    color: #353535;
+}
+
