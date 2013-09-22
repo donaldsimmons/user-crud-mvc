@@ -53,9 +53,9 @@
 			
 				$id = $_SESSION["id"];
 				
-				$this->model->getUserInfo($id);
-			
-				$this->renderView("profile","Profile");
+				$user = $this->model->getUserInfo($id);
+				
+				$this->renderView("profile","Profile",$user);
 			
 			}else{
 			
