@@ -145,6 +145,81 @@
 		
 		}// end CreateUser Function
 		
+		public function updateUser($user_id,$post_values) {
+		
+			$set_statement = "UPDATE users SET ";
+			$where_statement = " WHERE user_id = :id";
+			
+			$query_values_statements = [];
+			$query_values_input = [];
+		
+			foreach($post_values as $key => $index) {
+			
+				if(!empty($index)) {
+				
+					$$key = $index;
+					
+					//$keys_array[$key] = $index;
+					
+					switch($key) {
+					
+						case "full_name":
+							
+							$query_values_statements[] = "user_full_name = :full_name";
+							
+							$query_values_input[":full_name"] = $post_values["full_name"];
+							
+							break;
+							
+						case "user_height":
+							
+							$query_values_statements[] = "user_height = :height";
+							
+							$query_values_input[":height"] = $post_values["user_height"];
+							
+							break;
+							
+						case "user_weight":
+							
+							$query_values_statements[] = "user_weight = :weight";
+							
+							$query_values_input[":weight"] = $post_values["user_weight"];
+							
+							break;
+							
+						case "user_target_weight":
+					
+							$query_values_statements[] = "user_target_weight = :target_weight";
+							
+							$query_values_input[":target_weight"] = $post_values["user_target_weight"];
+							
+							break;
+							
+					}// end switch
+					
+				}// end if 			
+			
+			}// end loop
+			
+			$query_statement = implode(", ",$query_values_statements);
+			$query_values_input[":id"] = $user_id;
+			
+			$sql_statement = $set_statement.$query_statement.$where_statement;
+			
+			$statement = $this->db->prepare($sql_statement);
+			
+			if($statement->execute($query_values_input)) {
+			
+				return true;
+			
+			}else{
+			
+				return false;
+			
+			}
+		
+		}// end UpdateUser Function
+		
 		public function deleteUser($user_id) {
 		
 			$statement = $this->db->prepare("
