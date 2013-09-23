@@ -24,17 +24,17 @@
 
 <div id="edit_profile_form">
     <h4>Edit Profile</h4>
-    <form actions="<?php echo BASE_URL.BASE_PATH."/index.php/user/editUser"; ?>" method="post">
-        <label for="firstName" >First Name:</label>
-             <input type="text" name="firstName" id="firstName" maxlength="20" size="20" value="<?php echo $first_name ?>" /><br />
-        <label for="lastName" >Last Name:</label>
-            <input type="text" name="lastName" id="lastName" maxlength="20" size="20" value="<?php echo $last_name ?>" /><br /><br />
-        <label for="userHeight">User Height (inches):</label>
-            <input type="userHeight" name="userHeight" id="userHeight" maxlength="3" size="3" /><br />
-        <label for="userWeight">User Weight (pounds):</label>
-            <input type="userWeight" name="userWeight" id="userWeight" maxlength="3" size="3" /><br />
-        <label for="userTargetWeight">Target Weight (pounds):</label>
-            <input type="userTargetWeight" name="userTargetWeight" id="userTargetWeight" maxlength="3" size="3" /><br />
+    <form action="<?php echo BASE_URL.BASE_PATH."/index.php/user/editUser"; ?>" method="post">
+        <label for="first_name" >First Name:</label>
+             <input type="text" name="first_name" id="first_name" maxlength="20" size="20" value="<?php echo $first_name; ?>" /><br />
+        <label for="last_name" >Last Name:</label>
+            <input type="text" name="last_name" id="last_name" maxlength="20" size="20" value="<?php echo $last_name; ?>" /><br /><br />
+        <label for="user_height">User Height (inches):</label>
+            <input type="user_height" name="user_height" id="user_height" maxlength="3" size="3" /><br />
+        <label for="user_weight">User Weight (pounds):</label>
+            <input type="user_weight" name="user_weight" id="user_weight" maxlength="3" size="3" /><br />
+        <label for="user_target_weight">Target Weight (pounds):</label>
+            <input type="user_target_weight" name="user_target_weight" id="user_target_weight" maxlength="3" size="3" /><br />
         <input type="submit" name="edit_profile_btn" id="edit_profile_btn" value="Edit Profile" />
         <h5 id="delete_user_btn"><a href="<?php echo BASE_URL.BASE_PATH."/index.php/user/deleteUser"; ?>">Delete User?</a></h5>
     </form>
