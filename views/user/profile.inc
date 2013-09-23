@@ -36,7 +36,7 @@
         <label for="userTargetWeight">Target Weight (pounds):</label>
             <input type="userTargetWeight" name="userTargetWeight" id="userTargetWeight" maxlength="3" size="3" /><br />
         <input type="submit" name="edit_profile_btn" id="edit_profile_btn" value="Edit Profile" />
-        <h5 id="delete_user_btn"><a href="<?php echo BASE_URL.BASE_PATH."/index.php/user/delete"; ?>">Delete User?</a></h5>
+        <h5 id="delete_user_btn"><a href="<?php echo BASE_URL.BASE_PATH."/index.php/user/deleteUser"; ?>">Delete User?</a></h5>
     </form>
 </div>
 
