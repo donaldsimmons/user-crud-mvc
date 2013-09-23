@@ -1,9 +1,7 @@
 <?php
     
     $full_name = $view_data['full_name'];
-    $first_name = $view_data['first_name'];
-    $last_name = $view_data['last_name'];
-        
+
     $username = $view_data['username'];
     $height = $view_data['height'];
     $weight = $view_data['weight'];
