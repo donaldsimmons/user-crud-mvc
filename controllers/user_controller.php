@@ -33,7 +33,7 @@
 				
 					$_SESSION["id"] = $user["id"];
 				
-					header("Location: ".BASE_URL.BASE_PATH."/index.php/user/profile/".$user["id"]);
+					header("Location: ".BASE_URL.BASE_PATH."/index.php/user/profile");
 				
 				}else{
 				
@@ -86,7 +86,7 @@
 				
 				$_SESSION["id"] = $user["id"];
 				
-				header("Location: ".BASE_URL.BASE_PATH."/index.php/user/profile/".$user["id"]);
+				header("Location: ".BASE_URL.BASE_PATH."/index.php/user/profile");
 			}else {
 			
 				echo 'trouble creating user';
@@ -94,6 +94,18 @@
 			}
 		
 		}// end RegisterUser Function
+		
+		public function deleteUser() {
+		
+			$id = $_SESSION["id"];
+			
+			$this->model->deleteUser($id);
+			
+			unset($_SESSION["id"]);
+			
+			$this->signout();
+		
+		}//end DeleteUser Function
 		
 		public function signout() {
 		
