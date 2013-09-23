@@ -144,5 +144,18 @@
 			}
 		
 		}// end CreateUser Function
+		
+		public function deleteUser($user_id) {
+		
+			$statement = $this->db->prepare("
+			
+				DELETE FROM users
+				WHERE user_id = :id
+			
+			");
+			
+			$statement->execute(array(":id" => $user_id));
+		
+		}// end DeleteUser Function
 	
 	}// end UserModel Class
