@@ -42,8 +42,6 @@
 				}
 				
 			}
-			
-		
 		
 		}// end SignIn Function 
 		
@@ -94,6 +92,21 @@
 			}
 		
 		}// end RegisterUser Function
+		
+		public function editUser() {
+		
+			$id = $_SESSION["id"];
+			$post = $this->post_values;
+			
+			$updated_user = $this->model->updateUser($id,$post);
+			
+			if($updated_user == true) {
+			
+				header("Location: ".BASE_URL.BASE_PATH."/index.php/user/profile");
+			
+			}
+		
+		}// end editUser
 		
 		public function deleteUser() {
 		
