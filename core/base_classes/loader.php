@@ -7,7 +7,6 @@
 		
 		private $controller;
 		private $action;
-		private $id;
 	
 		public function __construct($get_values,$post_values) {
 		
@@ -70,16 +69,6 @@
 			
 				$this->action = $url_values["action"];
 			
-			}
-			
-			if(empty($url_values["id"])) {
-			
-				$this->id = "";
-			
-			}else{
-			
-				$this->id = $url_values["id"];
-				
 			}
 			
 		}// end CheckValues Function
