@@ -4,9 +4,9 @@
 	
 		private $model;
 	
-		public function __construct($action,$url_values,$post_values=array()) {
+		public function __construct($action,$get_values,$post_values=array()) {
 		
-			parent::__construct($action,$url_values,$post_values);
+			parent::__construct($action,$get_values,$post_values);
 			
 			$this->model = new UserModel(MY_DSN,MY_USER,MY_PASS);
 			
