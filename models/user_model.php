@@ -89,6 +89,60 @@
 				
 			}
 		
-		}// end GetUserFunction
+		}// end GetUserInfo Function
+		
+		public function createUser($user_info) {
+		
+			$characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+			$result = '';
+			for( $i = 0; $i < 8; $i++) {
+			
+				$result .= $characters[mt_rand(0, 61)];
+			
+			}
+			
+			$username = $user_info["new_username"];
+			$password = md5($result.$user_info["new_password"]);
+			$salt = $result;
+			$full_name = $user_info["new_first_name"]." ".$user_info["new_last_name"]; 
+			$height = $user_info["new_user_height"];
+			$weight = $user_info["new_user_weight"];
+			$target_weight = $user_info["new_target_weight"];
+		
+			$statement = $this->db->prepare("
+			
+				INSERT INTO users
+				SET 
+					user_name = :username,
+					user_pass = :password,
+					user_salt = :salt,
+					user_full_name = :full_name,
+					user_height = :height,
+					user_weight = :weight,
+					user_target_weight = :target_weight
+			
+			"); 
+			
+			if($statement->execute(array(
+				":username" => $username,
+				":password" => $password,
+				":salt" => $salt,
+				":full_name" => $full_name,
+				":height" => $height,
+				":weight" => $weight,
+				":target_weight" => $target_weight
+			))) {
+			
+				$signin_info = ["username"=>$username,"password"=>$password];
+				
+				return $signin_info;
+			
+			}else{
+			
+				return 'cant execute';
+			
+			}
+		
+		}// end CreateUser Function
 	
 	}// end UserModel Class
