@@ -24,7 +24,7 @@
 
 <div id="edit_profile_form">
     <h4>Edit Profile</h4>
-    <form actions="?" method="post">
+    <form actions="<?php echo BASE_URL.BASE_PATH."/index.php/user/edit"; ?>" method="post">
         <label for="firstName" >First Name:</label>
              <input type="text" name="firstName" id="firstName" maxlength="20" size="20" value="<?php echo $first_name ?>" /><br />
         <label for="lastName" >Last Name:</label>
@@ -36,7 +36,7 @@
         <label for="userTargetWeight">Target Weight (pounds):</label>
             <input type="userTargetWeight" name="userTargetWeight" id="userTargetWeight" maxlength="3" size="3" /><br />
         <input type="submit" name="edit_profile_btn" id="edit_profile_btn" value="Edit Profile" />
-        <input type="submit" name="delete_user_btn" id="delete_user_btn" value="Delete User?" />
+        <h5 id="delete_user_btn"><a href="<?php echo BASE_URL.BASE_PATH."/index.php/user/delete"; ?>">Delete User?</a></h5>
     </form>
 </div>
 
