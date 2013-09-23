@@ -24,7 +24,7 @@
 
 <div id="edit_profile_form">
     <h4>Edit Profile</h4>
-    <form actions="<?php echo BASE_URL.BASE_PATH."/index.php/user/edit"; ?>" method="post">
+    <form actions="<?php echo BASE_URL.BASE_PATH."/index.php/user/editUser"; ?>" method="post">
         <label for="firstName" >First Name:</label>
              <input type="text" name="firstName" id="firstName" maxlength="20" size="20" value="<?php echo $first_name ?>" /><br />
         <label for="lastName" >Last Name:</label>
