@@ -25,8 +25,8 @@
 <div id="edit_profile_form">
     <h4>Edit Profile</h4>
     <form action="<?php echo BASE_URL.BASE_PATH."/index.php/user/editUser"; ?>" method="post">
-        <label for="name" >Name:</label>
-             <input type="text" name="name" id="name" maxlength="20" size="20" /><br /><br />
+        <label for="full_name" >Name:</label>
+             <input type="text" name="full_name" id="full_name" maxlength="20" size="20" /><br /><br />
         <label for="user_height">User Height (inches):</label>
             <input type="user_height" name="user_height" id="user_height" maxlength="3" size="3" /><br />
         <label for="user_weight">User Weight (pounds):</label>
