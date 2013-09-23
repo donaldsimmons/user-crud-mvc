@@ -124,13 +124,23 @@ a:hover {
 }
 
 #edit_profile_btn {
-    margin-top: 35px;
+    margin-top: 25px;
+    margin-bottom: 10px;
 }
 
 #delete_user_btn {
-    clear: right;
-    margin-left: 95px;
-    margin-bottom: 8px;
+    float: right;
+    margin-right: 19px;
+    margin-top: 27px;
+}
+
+#delete_user_btn a:link {
+	text-decoration: underline;
+}
+#delete_user_btn a:hover {
+	text-decoration: none;
+	
+	color: #353535;
 }
 
 #container {
