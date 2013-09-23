@@ -72,8 +72,26 @@
 		}// end SignUp Function
 		
 		public function registerUser() {
-		
-			header("Location: index.php/user/profile");
+			
+			$new_user_info = $this->post_values;
+			
+			$username = $this->model->validateUsername($new_user_info["new_username"]);
+			$password = $this->model->validatePassword($new_user_info["new_password"]);
+			
+			if($username !== false && $password !== false) {
+			
+				$new_user = $this->model->createUser($new_user_info);
+			
+				$user = $this->model->getUserByPassword($new_user["username"], $new_user_info["new_password"]);
+				
+				$_SESSION["id"] = $user["id"];
+				
+				header("Location: ".BASE_URL.BASE_PATH."/index.php/user/profile/".$user["id"]);
+			}else {
+			
+				echo 'trouble creating user';
+			
+			}
 		
 		}// end RegisterUser Function
 		
